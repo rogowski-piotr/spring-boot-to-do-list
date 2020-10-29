@@ -1,6 +1,5 @@
 package pl.piotr.service.configuration;
 
-import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pl.piotr.service.entity.Task;
@@ -9,7 +8,6 @@ import pl.piotr.service.service.TaskService;
 import pl.piotr.service.service.UserService;
 
 import javax.annotation.PostConstruct;
-import java.io.InputStream;
 import java.time.LocalDate;
 
 @Component
@@ -76,13 +74,6 @@ public class InitializedData {
         taskService.create(task1);
         taskService.create(task2);
         taskService.create(task3);
-    }
-
-    @SneakyThrows
-    private byte[] getResourceAsByteArray(String name) {
-        try (InputStream is = this.getClass().getResourceAsStream(name)) {
-            return is.readAllBytes();
-        }
     }
 
 }

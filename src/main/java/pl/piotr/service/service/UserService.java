@@ -2,6 +2,7 @@ package pl.piotr.service.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pl.piotr.service.entity.User;
 import pl.piotr.service.repository.UserRepository;
 
@@ -23,11 +24,17 @@ public class UserService {
     }
 
     public Optional<User> find(String email) {
-        return repository.find(email);
+        return repository.findById(email);
     }
 
-    public void create(User user) {
-        repository.create(user);
+    @Transactional
+    public User create(User user) {
+        return repository.save(user);
+    }
+
+    @Transactional
+    public void update(User user) {
+        repository.save(user);
     }
 
 }

@@ -1,0 +1,62 @@
+PUT http://localhost:8080/api/users/john@example.com
+Content-Type: application/json
+
+{
+  "email": "newEmail@example.com",
+  "password": "haslo",
+  "firstName": "changed name",
+  "lastName": "last name",
+  "birthDate": "2001-01-10"
+}
+
+###
+GET http://localhost:8080/api/users/newEmail@example.com
+
+###
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "email": "email",
+  "password": "haslo",
+  "firstName": "first name",
+  "lastName": "last name",
+  "birthDate": "2001-01-10"
+}
+
+###
+GET http://localhost:8080/api/users/email
+
+###
+DELETE http://localhost:8080/api/users/john@example.com/tasks/3
+
+###
+PUT http://localhost:8080/api/users/john@example.com/tasks/4
+Content-Type: application/json
+
+{
+    "description": "new task",
+    "priority": 1,
+    "description": "create a new functionality - edit",
+    "extendedDescription": "develop the most important app"
+}
+
+###
+POST http://localhost:8080/api/users/john@example.com/tasks
+Content-Type: application/json
+
+{
+  "description": "new task",
+  "priority": 1,
+  "description": "create a new functionality",
+  "extendedDescription": "develop the most important app"
+}
+
+###
+GET http://localhost:8080/api/users/john@example.com/tasks/4
+
+###
+
+GET http://localhost:8080/api/users/john@example.com/tasks/
+
+###

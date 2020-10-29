@@ -1,6 +1,8 @@
 package pl.piotr.service.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import pl.piotr.service.entity.Task;
 import pl.piotr.service.entity.User;
 import pl.piotr.service.repository.TaskRepository;
@@ -13,24 +15,32 @@ public class TaskService {
 
     private TaskRepository repository;
 
+    @Autowired
     public TaskService(TaskRepository repository) {
         this.repository = repository;
     }
 
     public List<Task> findAll(User user) {
-        return repository.findAllByUser(user);
+        return repository.findAllByOwner(user);
     }
 
     public Optional<Task> find(int id) {
-        return repository.find(id);
+        return repository.findById(id);
     }
 
-    public void create(Task task) {
-        repository.create(task);
+    @Transactional
+    public Task create(Task task) {
+        return repository.save(task);
     }
 
-    public void delete(Task task) {
-        repository.delete(task);
+    @Transactional
+    public void update(Task task) {
+        repository.save(task);
+    }
+
+    @Transactional
+    public void delete(int id) {
+        repository.deleteById(id);
     }
 
 }
