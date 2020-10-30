@@ -6,10 +6,12 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 import pl.piotr.service.dto.user.CreateUserRequest;
 import pl.piotr.service.dto.user.GetUserResponse;
+import pl.piotr.service.dto.user.GetUsersResponse;
 import pl.piotr.service.dto.user.UpdateUserRequest;
 import pl.piotr.service.entity.User;
 import pl.piotr.service.service.UserService;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -21,6 +23,16 @@ public class UserController {
     @Autowired
     public UserController(UserService service) {
         this.service = service;
+    }
+
+    @GetMapping()
+    public ResponseEntity<GetUsersResponse> getUsers() {
+        List<User> listAll = service.findAll();
+        if (!listAll.isEmpty()) {
+            return ResponseEntity.ok(GetUsersResponse.entityToDtoMapper().apply(service.findAll()));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @GetMapping("{username}")
