@@ -37,4 +37,9 @@ public class UserService {
         repository.save(user);
     }
 
+    @Transactional
+    public void delete(String email) {
+        repository.deleteById(email);
+    }
+
 }

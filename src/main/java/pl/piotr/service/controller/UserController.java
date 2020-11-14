@@ -76,4 +76,15 @@ public class UserController {
         }
     }
 
+    @DeleteMapping("{username}")
+    public ResponseEntity<Void> deleteUser(@PathVariable("username") String username) {
+        Optional<User> user = service.find(username);
+        if (user.isPresent()) {
+            service.delete(user.get().getEmail());
+            return ResponseEntity.accepted().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }

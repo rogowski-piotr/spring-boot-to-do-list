@@ -31,7 +31,7 @@ public class User implements Serializable {
 
     private LocalDate birthDate;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Task> toDoList;
 
 }
