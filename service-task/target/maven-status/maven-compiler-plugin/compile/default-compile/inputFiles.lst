@@ -1,0 +1,13 @@
+C:\Users\rogus\Desktop\spring-boot-to-do-list\service-task\src\main\java\pl\piotr\service\dto\GetTasksResponse.java
+C:\Users\rogus\Desktop\spring-boot-to-do-list\service-task\src\main\java\pl\piotr\service\ServiceApplication.java
+C:\Users\rogus\Desktop\spring-boot-to-do-list\service-task\src\main\java\pl\piotr\service\controller\TaskController.java
+C:\Users\rogus\Desktop\spring-boot-to-do-list\service-task\src\main\java\pl\piotr\service\service\TaskService.java
+C:\Users\rogus\Desktop\spring-boot-to-do-list\service-task\src\main\java\pl\piotr\service\entity\User.java
+C:\Users\rogus\Desktop\spring-boot-to-do-list\service-task\src\main\java\pl\piotr\service\service\UserService.java
+C:\Users\rogus\Desktop\spring-boot-to-do-list\service-task\src\main\java\pl\piotr\service\dto\CreateTaskRequest.java
+C:\Users\rogus\Desktop\spring-boot-to-do-list\service-task\src\main\java\pl\piotr\service\repository\TaskRepository.java
+C:\Users\rogus\Desktop\spring-boot-to-do-list\service-task\src\main\java\pl\piotr\service\dto\GetTaskResponse.java
+C:\Users\rogus\Desktop\spring-boot-to-do-list\service-task\src\main\java\pl\piotr\service\entity\Task.java
+C:\Users\rogus\Desktop\spring-boot-to-do-list\service-task\src\main\java\pl\piotr\service\repository\UserRepository.java
+C:\Users\rogus\Desktop\spring-boot-to-do-list\service-task\src\main\java\pl\piotr\service\dto\UpdateTaskRequest.java
+C:\Users\rogus\Desktop\spring-boot-to-do-list\service-task\src\main\java\pl\piotr\service\configuration\InitializedData.java
