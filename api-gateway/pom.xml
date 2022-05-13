@@ -15,12 +15,10 @@
     <groupId>pl.piotr</groupId>
     <artifactId>api-gateway</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>serviceTask</name>
+    <name>apiGateway</name>
     <description>Simple toDoList service</description>
 
     <properties>
-        <maven.compiler.target>11</maven.compiler.target>
-        <maven.compiler.source>11</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
@@ -35,7 +33,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <version>1.18.22</version>
         </dependency>
 
         <dependency>
